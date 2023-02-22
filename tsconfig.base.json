@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@ng-cs/form-builder": ["libs/form-builder/src/index.ts"],
-      "@ng-cs/tabs": ["libs/tabs/src/index.ts"]
+      "@ng-cs/tabs": ["libs/tabs/src/index.ts"],
+      "@ng-cs/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
