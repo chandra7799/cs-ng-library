@@ -1,8 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core'
+import { FormBuilderBaseComponent } from './form-builder-base.component'
 
 @Component({
   selector: 'ng-cs-form-builder',
   templateUrl: './form-builder.component.html',
   styleUrls: ['./form-builder.component.scss'],
 })
-export class FormBuilderComponent {}
+export class FormBuilderComponent
+  extends FormBuilderBaseComponent
+  implements OnInit
+{
+  @Input() configuration: any
+  ngOnInit(): void {}
+}
