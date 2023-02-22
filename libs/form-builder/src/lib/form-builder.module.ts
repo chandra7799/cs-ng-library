@@ -19,6 +19,13 @@ import { TemplateComponent } from './components/template/template.component'
     CheckBoxComponent,
     TemplateComponent,
   ],
-  exports: [FormBuilderComponent],
+  exports: [
+    FormBuilderComponent,
+    DateComponent,
+    AutoCompleteComponent,
+    InputComponent,
+    SelectComponent,
+    CheckBoxComponent,
+  ],
 })
 export class NgcsFormBuilderModule {}
