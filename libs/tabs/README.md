@@ -1,7 +1,7 @@
-# ng-cs-tabs
+# tabs
 
 This library was generated with [Nx](https://nx.dev).
 
 ## Running unit tests
 
-Run `nx test ng-cs-tabs` to execute the unit tests.
+Run `nx test tabs` to execute the unit tests.

@@ -1,31 +1,31 @@
 {
-  "name": "ng-cs-tabs",
+  "name": "tabs",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/ng-cs-tabs/src",
+  "sourceRoot": "libs/tabs/src",
   "prefix": "ng-cs",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",
-      "outputs": ["dist/libs/ng-cs-tabs"],
+      "outputs": ["dist/libs/tabs"],
       "options": {
-        "project": "libs/ng-cs-tabs/ng-package.json"
+        "project": "libs/tabs/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/ng-cs-tabs/tsconfig.lib.prod.json"
+          "tsConfig": "libs/tabs/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/ng-cs-tabs/tsconfig.lib.json"
+          "tsConfig": "libs/tabs/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/ng-cs-tabs"],
+      "outputs": ["coverage/libs/tabs"],
       "options": {
-        "jestConfig": "libs/ng-cs-tabs/jest.config.ts",
+        "jestConfig": "libs/tabs/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -33,8 +33,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/ng-cs-tabs/**/*.ts",
-          "libs/ng-cs-tabs/**/*.html"
+          "libs/tabs/**/*.ts",
+          "libs/tabs/**/*.html"
         ]
       }
     }
