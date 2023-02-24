@@ -1,0 +1,20 @@
+{
+  "controls": {
+    "first_name": {
+      "label": "First name",
+      "title": "First name",
+      "placeHolder": "First name",
+      "controlType": "input",
+      "value": ""
+    }
+  },
+  "validatorMessages": {},
+  "controlSize": "",
+  "layout": {
+    "container": "container",
+    "first_name": {
+      "label": "col-sm-4",
+      "control": "col-sm-8"
+    }
+  }
+}
