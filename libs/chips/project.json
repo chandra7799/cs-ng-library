@@ -1,0 +1,40 @@
+{
+  "name": "chips",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/chips/src",
+  "prefix": "ng-cs-libraries",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/chips"],
+      "options": {
+        "project": "libs/chips/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/chips/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/chips/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/chips"],
+      "options": {
+        "jestConfig": "libs/chips/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/chips/**/*.ts", "libs/chips/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}
