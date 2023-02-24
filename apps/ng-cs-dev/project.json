@@ -17,7 +17,8 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/ng-cs-dev/src/favicon.ico",
-          "apps/ng-cs-dev/src/assets"
+          "apps/ng-cs-dev/src/assets",
+          "apps/ng-cs-dev/src/app"
         ],
         "styles": ["apps/ng-cs-dev/src/styles.scss"],
         "scripts": []
