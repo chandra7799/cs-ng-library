@@ -1,0 +1,43 @@
+{
+  "name": "bread-crumb",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/bread-crumb/src",
+  "prefix": "ng-cs-bread-crumb",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/bread-crumb"],
+      "options": {
+        "project": "libs/bread-crumb/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/bread-crumb/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/bread-crumb/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/bread-crumb"],
+      "options": {
+        "jestConfig": "libs/bread-crumb/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/bread-crumb/**/*.ts",
+          "libs/bread-crumb/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
