@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'ng-cs-libraries-root',
+  selector: 'ng-cs-libraries-ng-cs-dev-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
