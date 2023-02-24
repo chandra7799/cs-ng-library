@@ -6,10 +6,6 @@ import { FormBuilderBaseComponent } from './form-builder-base.component'
   templateUrl: './form-builder.component.html',
   styleUrls: ['./form-builder.component.scss'],
 })
-export class FormBuilderComponent
-  extends FormBuilderBaseComponent
-  implements OnInit
-{
+export class FormBuilderComponent extends FormBuilderBaseComponent {
   @Input() configuration: any
-  ngOnInit(): void {}
 }

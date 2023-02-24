@@ -1,3 +1,13 @@
 <p>form-builder works!</p>
-<ng-cs-form-builder-template></ng-cs-form-builder-template>
-<p>{{ placeHolder }}</p>
+<p>{{ configuration | json }}</p>
+<p>layout : {{ configuration?.layout | omit : 'container' | json }}</p>
+<ng-container *ngIf="!!configuration">
+  <ng-container *ngIf="configuration?.layout as layout">
+    <div [className]="layout?.container">
+      <!-- <p>{{ configuration?.layout | json }}</p> -->
+      <p *ngFor="let key in configuration?.layout | omit : 'container'">
+        
+      </p>
+    </div>
+  </ng-container>
+</ng-container>

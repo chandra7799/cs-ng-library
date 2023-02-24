@@ -7,9 +7,10 @@ import { InputComponent } from './components/input/input.component'
 import { SelectComponent } from './components/select/select.component'
 import { CheckBoxComponent } from './components/check-box/check-box.component'
 import { TemplateComponent } from './components/template/template.component'
+import { NgcsUtilsModule } from '@ng-cs/utils'
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, NgcsUtilsModule],
   declarations: [
     FormBuilderComponent,
     DateComponent,
