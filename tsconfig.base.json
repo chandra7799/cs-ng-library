@@ -17,6 +17,7 @@
     "paths": {
       "@ng-cs/bread-crumb": ["libs/bread-crumb/src/index.ts"],
       "@ng-cs/form-builder": ["libs/form-builder/src/index.ts"],
+      "@ng-cs/table": ["libs/table/src/index.ts"],
       "@ng-cs/tabs": ["libs/tabs/src/index.ts"],
       "@ng-cs/utils": ["libs/utils/src/index.ts"]
     }
