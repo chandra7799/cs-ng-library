@@ -9,6 +9,14 @@ const routes: Routes = [
         return m.FormBuilderModule
       }),
   },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'form-builder',
+  },
+  {
+    path:'**', redirectTo:'form-builder'
+  }
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -27,6 +27,7 @@ import { NgcsUtilsModule } from '@ng-cs/utils'
     InputComponent,
     SelectComponent,
     CheckBoxComponent,
+    TemplateComponent,
   ],
 })
 export class NgcsFormBuilderModule {}
