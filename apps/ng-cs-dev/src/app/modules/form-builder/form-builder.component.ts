@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
 import {} from '../form-builder/form-builder.module'
 @Component({
-  selector: 'ng-cs-libraries-form-builder',
+  selector: 'ng-cs-dev-form-builder',
   templateUrl: './form-builder.component.html',
   styleUrls: [],
 })
