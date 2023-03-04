@@ -5,9 +5,14 @@ const routes: Routes = [
   {
     path: 'form-builder',
     loadChildren: () =>
-      import('./modules/form-builder/form-builder.module').then((m) => {
-        return m.FormBuilderModule
-      }),
+      import('./modules/form-builder/form-builder.module').then(
+        (m) => m.FormBuilderModule
+      ),
+  },
+  {
+    path: 'tabs',
+    loadChildren: () =>
+      import('./modules/tabs/tabs.module').then((m) => m.TabsModule),
   },
   {
     path: '',
@@ -15,8 +20,9 @@ const routes: Routes = [
     redirectTo: 'form-builder',
   },
   {
-    path:'**', redirectTo:'form-builder'
-  }
+    path: '**',
+    redirectTo: 'form-builder',
+  },
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

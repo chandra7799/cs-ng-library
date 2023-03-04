@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 
 import { AppComponent } from './app.component'
-import { NgcsFormBuilderModule } from '@ng-cs/form-builder'
 import { AppRoutingModule } from './app-routing.modules'
 import { RouterModule } from '@angular/router'
 
@@ -11,7 +10,7 @@ import { RouterModule } from '@angular/router'
   imports: [
     AppRoutingModule,
     BrowserModule,
-    NgcsFormBuilderModule,
+    
     RouterModule,
   ],
   providers: [],
