@@ -1,4 +1,4 @@
-import { TabsComponent } from './../../../../../../libs/tabs/src/lib/tabs.component'
+import { TabsComponent } from './tabs.component'
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
