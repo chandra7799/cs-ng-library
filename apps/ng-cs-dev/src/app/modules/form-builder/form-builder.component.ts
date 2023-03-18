@@ -1,13 +1,12 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
-import {} from '../form-builder/form-builder.module'
 @Component({
   selector: 'ng-cs-dev-form-builder',
   templateUrl: './form-builder.component.html',
   styleUrls: [],
 })
 export class FormBuilderComponent implements OnInit {
-  configuration: unknown
+  configuration: any 
   constructor(private _http: HttpClient) {}
   ngOnInit(): void {
     this.getConfigData()
