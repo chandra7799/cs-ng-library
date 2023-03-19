@@ -1,0 +1,38 @@
+
+<ng-container *ngIf="!!configuration && configuration?.controls as controls">
+  <!-- Main container -->
+
+  <ng-container *ngIf="configuration?.layout as layout">
+    <div [ngClass]="configuration?.layout?.zcontainer || 'container-fluid'">
+      <!-- For Rows -->
+      <ng-container
+        *ngFor="let row of configuration?.layout | omit: 'container' | keysIn"
+      >
+        <form>
+          <div class="row">
+            <ng-container
+              *ngFor="let col of layout[row] | omit: 'container' | keysIn"
+            >
+              <!-- {{ layout[row][col] | json }} -->
+
+              <div [ngClass]="layout[row][col]['width'] || 'col'">
+                <div class="form-group">
+                  <label
+                    [ngClass]=""
+                    for=""
+                    >{{ controls[col]?.label || '' }}</label
+                  >
+                  <input
+                    [type]="controls[col]['inputType'] || 'text'"
+                    class="form-control"
+                    [placeholder]="controls[col]?.placeholder || ''"
+                  />
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </form>
+      </ng-container>
+    </div>
+  </ng-container>
+</ng-container>

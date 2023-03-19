@@ -8,9 +8,11 @@ import { SelectComponent } from './components/select/select.component'
 import { CheckBoxComponent } from './components/check-box/check-box.component'
 import { TemplateComponent } from './components/template/template.component'
 import { NgcsUtilsModule } from '@ng-cs/utils'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormBuilderService } from './services/form-builder.service'
 
 @NgModule({
-  imports: [CommonModule, NgcsUtilsModule],
+  imports: [CommonModule, NgcsUtilsModule, FormsModule, ReactiveFormsModule],
   declarations: [
     FormBuilderComponent,
     DateComponent,
@@ -29,5 +31,6 @@ import { NgcsUtilsModule } from '@ng-cs/utils'
     CheckBoxComponent,
     TemplateComponent,
   ],
+  providers: [FormBuilderService],
 })
 export class NgcsFormBuilderModule {}

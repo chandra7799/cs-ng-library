@@ -1,33 +1,24 @@
 <ng-container *ngIf="!!configuration && configuration?.controls as controls">
-  <!-- Main container -->
-
   <ng-container *ngIf="configuration?.layout as layout">
-    <div [ngClass]="configuration?.layout?.container || 'container-fluid'">
-      <!-- For Rows -->
-      <ng-container
-        *ngFor="let row of configuration?.layout | omit: 'container' | keysIn"
-      >
+    <div [ngClass]="layout['container'] || 'container-fluid'">
+      <ng-container *ngFor="let row of layout | omit: ['container'] | keysIn">
         <form>
           <div class="row">
             <ng-container
-              *ngFor="let col of layout[row] | omit: 'container' | keysIn"
+              *ngFor="let col of layout[row] | omit: ['container'] | keysIn"
             >
-              <!-- {{ layout[row][col] | json }} -->
+              <ng-container *ngIf="layout[row][col] | omit: [''] as colValue">
+                <div [ngClass]="[colValue?.width] || 'col'">
+                  <div class="form-group">
+                    <label for="">{{ controls[col]['label'] }}</label>
 
-              <div [ngClass]="layout[row][col]['width'] || 'col'">
-                <div class="form-group">
-                  <label
-                    [ngClass]=""
-                    for=""
-                    >{{ controls[col]?.label || '' }}</label
-                  >
-                  <input
-                    [type]="controls[col]['inputType'] || 'text'"
-                    class="form-control"
-                    [placeholder]="controls[col]?.placeholder || ''"
-                  />
+                    <input
+                      class="form-control"
+                      [type]="controls[col]['inputType']"
+                    />
+                  </div>
                 </div>
-              </div>
+              </ng-container>
             </ng-container>
           </div>
         </form>
