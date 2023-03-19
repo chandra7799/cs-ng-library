@@ -15,12 +15,28 @@ export class FormBuilderService {
 
   public toFormGroup(controls: Record<string, Controls>): FormGroup<any> {
     keysIn(controls).map((key) => {
+      const control: Controls = controls[key]
+      const [email, max, min, minLength, maxLength, required] = [
+        control.email,
+        control.max,
+        control.min,
+        control.minLength,
+        control.maxLength,
+        control.required,
+      ]
       this._formGroup.addControl(
         key,
         new FormControl(controls[key].value || '', [
-          controls[key]?.required
-            ? Validators.required
+          email ? Validators.email : Validators.nullValidator,
+          max ? Validators.max(max) : Validators.nullValidator,
+          min ? Validators.min(min) : Validators.nullValidator,
+          maxLength
+            ? Validators.maxLength(maxLength)
             : Validators.nullValidator,
+          minLength
+            ? Validators.minLength(minLength)
+            : Validators.nullValidator,
+          required ? Validators.required : Validators.nullValidator,
         ])
       )
     })

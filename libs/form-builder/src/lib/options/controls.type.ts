@@ -8,11 +8,13 @@ export type Controls = {
     | ControlType.DATE
     | ControlType.INPUT
     | ControlType.SELECT
-
+  email?: boolean
   inputType?: string
   label?: string
-  min?: string
-  max?: string
+  max?: number
+  maxLength?: number
+  min?: number
+  minLength?: number
   placeholder?: string
   required?: boolean
   title?: string
