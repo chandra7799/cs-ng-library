@@ -1,13 +1,16 @@
 <ng-container *ngIf="!!configuration && configuration?.controls as controls">
   <ng-container *ngIf="configuration?.layout as layout">
+    <!-- Main container -->
     <div [ngClass]="layout['container'] || 'container-fluid'">
       <ng-container *ngFor="let row of layout | omit: ['container'] | keysIn">
-        <form>
+        <form [formGroup]="formGroup">
+          <!-- Row container -->
           <div class="row">
             <ng-container
               *ngFor="let col of layout[row] | omit: ['container'] | keysIn"
             >
               <ng-container *ngIf="layout[row][col] | omit: [''] as colValue">
+                <!-- Col container -->
                 <div [ngClass]="[colValue?.width] || 'col'">
                   <div class="form-group">
                     <label for="">{{ controls[col]['label'] }}</label>
@@ -15,6 +18,7 @@
                     <input
                       class="form-control"
                       [type]="controls[col]['inputType']"
+                      [formControlName]="col"
                     />
                   </div>
                 </div>
@@ -26,3 +30,5 @@
     </div>
   </ng-container>
 </ng-container>
+
+<p>{{ formGroup.value | json }}</p>

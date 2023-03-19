@@ -1,5 +1,5 @@
-import { FormGroup } from '@angular/forms'
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core'
+import { FormBuilder, FormGroup } from '@angular/forms'
+import { Component, Input, OnInit } from '@angular/core'
 import { FormBuilderBaseComponent } from './form-builder-base.component'
 import { FormBuilderConfig } from './options/form-builder-config.options'
 import { FormBuilderService } from './services/form-builder.service'
@@ -11,26 +11,29 @@ import { FormBuilderService } from './services/form-builder.service'
 })
 export class FormBuilderComponent
   extends FormBuilderBaseComponent
-  implements OnChanges
+  implements OnInit
 {
   @Input() configuration?: FormBuilderConfig
 
-  formGroup?: FormGroup
+  formGroup: FormGroup
 
-  constructor(private _formBuilderService: FormBuilderService) {
+  constructor(
+    private _formBuilderService: FormBuilderService,
+    private _formBuilder: FormBuilder
+  ) {
     super()
+    this.formGroup = this._formBuilder.group({})
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnInit() {
     this._toFormGroup()
-
-    console.log(this.formGroup)
   }
 
-  private async _toFormGroup(): Promise<void> {
-    if (this.configuration?.controls)
-      this.formGroup = await this._formBuilderService.toFormGroup(
-        this.configuration?.controls
-      )
+  private _toFormGroup(): void {
+    if (!this.configuration?.controls) return
+
+    this.formGroup = this._formBuilderService.toFormGroup(
+      this.configuration?.controls
+    )
   }
 }

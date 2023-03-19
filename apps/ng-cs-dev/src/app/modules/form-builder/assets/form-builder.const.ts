@@ -5,21 +5,21 @@ export const FORM_BUILDER_CONFIG = {
       title: 'First name',
       placeholder: 'First name',
       controlType: 'input',
-      value: '',
+      value: 'Kommi',
     },
     middle_name: {
       label: 'Middle Name',
       title: 'Middle name',
       placeholder: 'Middle name',
       controlType: 'input',
-      value: '',
+      value: 'Chandra',
     },
     last_name: {
       label: 'Last name',
       title: 'Last name',
       placeholder: 'Last name',
       controlType: 'input',
-      value: '',
+      value: 'Sekhar',
     },
 
     email: {

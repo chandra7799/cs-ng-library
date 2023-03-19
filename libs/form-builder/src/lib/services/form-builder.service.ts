@@ -7,19 +7,19 @@ import { Controls } from '../options/controls.type'
   providedIn: 'root',
 })
 export class FormBuilderService {
-  private _formGroup: FormGroup
+  private _formGroup: FormGroup<any>
 
   constructor(private _formBuilder: FormBuilder) {
     this._formGroup = this._formBuilder.group({})
   }
 
-  toFormGroup(controls: Record<string, Controls>): FormGroup {
-    console.log('controls', controls)
-
+  public toFormGroup(controls: Record<string, Controls>): FormGroup<any> {
     keysIn(controls).map((key) => {
-      return key + ''
+      this._formGroup.addControl(
+        key,
+        this._formBuilder.control(controls[key].value || '')
+      )
     })
-
-    return {} as FormGroup
+    return this._formGroup
   }
 }

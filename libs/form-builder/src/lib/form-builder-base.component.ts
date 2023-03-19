@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core'
   template: '',
   styleUrls: [],
 })
-export class FormBuilderBaseComponent {
+export abstract class FormBuilderBaseComponent {
   @Input() placeHolder = ''
   @Input() label = ''
 }
