@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { FormBuilder, FormGroup } from '@angular/forms'
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { keysIn } from '@ng-cs/utils'
 import { Controls } from '../options/controls.type'
 
@@ -17,7 +17,11 @@ export class FormBuilderService {
     keysIn(controls).map((key) => {
       this._formGroup.addControl(
         key,
-        this._formBuilder.control(controls[key].value || '')
+        new FormControl(controls[key].value || '', [
+          controls[key]?.required
+            ? Validators.required
+            : Validators.nullValidator,
+        ])
       )
     })
     return this._formGroup

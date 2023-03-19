@@ -13,13 +13,36 @@
                 <!-- Col container -->
                 <div [ngClass]="[colValue?.width] || 'col'">
                   <div class="form-group">
-                    <label for="">{{ controls[col]['label'] }}</label>
+                    <label>
+                      {{ controls[col].label }}
+                      <strong *ngIf="controls[col].required">*</strong>
+                    </label>
 
                     <input
+                      [ngClass]="[
+                        formGroup.controls[col].invalid &&
+                        formGroup.controls[col].touched
+                          ? 'border border-danger'
+                          : ''
+                      ]"
                       class="form-control"
                       [type]="controls[col]['inputType']"
                       [formControlName]="col"
                     />
+                    <small
+                      class="text-danger"
+                      *ngIf="
+                        formGroup.controls[col]?.invalid &&
+                        formGroup.controls[col]?.touched &&
+                        formGroup.controls[col].errors as errors
+                      "
+                    >
+                      <ng-container
+                        *ngIf="configuration.validatorMessages as errorMessages"
+                      >
+                        {{ errorMessages['required'] }}
+                      </ng-container>
+                    </small>
                   </div>
                 </div>
               </ng-container>
@@ -31,4 +54,7 @@
   </ng-container>
 </ng-container>
 
+<p>isValid : {{ formGroup.status | json }}</p>
 <p>{{ formGroup.value | json }}</p>
+
+<p>{{ formGroup.errors | json }}</p>

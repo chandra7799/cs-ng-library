@@ -5,21 +5,23 @@ export const FORM_BUILDER_CONFIG = {
       title: 'First name',
       placeholder: 'First name',
       controlType: 'input',
-      value: 'Kommi',
+      required: true,
+      value: 'Chandra',
     },
     middle_name: {
       label: 'Middle Name',
       title: 'Middle name',
       placeholder: 'Middle name',
       controlType: 'input',
-      value: 'Chandra',
+      value: '',
     },
     last_name: {
       label: 'Last name',
       title: 'Last name',
       placeholder: 'Last name',
       controlType: 'input',
-      value: 'Sekhar',
+      required: true,
+      value: '',
     },
 
     email: {
@@ -28,6 +30,7 @@ export const FORM_BUILDER_CONFIG = {
       placeholder: 'Email',
       controlType: 'input',
       inputType: 'email',
+      required: true,
       value: '',
     },
     phone_number: {
@@ -39,7 +42,9 @@ export const FORM_BUILDER_CONFIG = {
       value: '',
     },
   },
-  validatorMessages: {},
+  validatorMessages: {
+    required: 'Input required',
+  },
   controlSize: '',
   layout: {
     container: 'container',

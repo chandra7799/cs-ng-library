@@ -11,7 +11,10 @@ export type Controls = {
 
   inputType?: string
   label?: string
+  min?: string
+  max?: string
   placeholder?: string
+  required?: boolean
   title?: string
   value?: string
 }
