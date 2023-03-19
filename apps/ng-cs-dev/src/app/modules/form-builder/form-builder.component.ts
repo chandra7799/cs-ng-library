@@ -1,22 +1,19 @@
 import { HttpClient } from '@angular/common/http'
 import { Component, OnInit } from '@angular/core'
+import { FORM_BUILDER_CONFIG } from './assets/form-builder.const'
 @Component({
   selector: 'ng-cs-dev-form-builder',
   templateUrl: './form-builder.component.html',
   styleUrls: [],
 })
 export class FormBuilderComponent implements OnInit {
-  configuration: any 
+  configuration: any
   constructor(private _http: HttpClient) {}
   ngOnInit(): void {
-    this.getConfigData()
+    this._getConfigData()
   }
 
-  getConfigData(): void {
-    this._http
-      .get('app/modules/form-builder/assets/form-builder.json')
-      .subscribe((data) => {
-        this.configuration = data
-      })
+  private _getConfigData(): void {
+    this.configuration = FORM_BUILDER_CONFIG  
   }
 }
