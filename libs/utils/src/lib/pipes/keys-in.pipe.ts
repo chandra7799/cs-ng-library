@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core'
   name: 'keysIn',
 })
 export class KeysInPipe implements PipeTransform {
-  transform(object: object): string[] {
+  transform(object: any): string[] {
     return keysIn(object)
   }
 }

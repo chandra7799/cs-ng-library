@@ -6,6 +6,7 @@ export const FORM_BUILDER_CONFIG = {
       placeholder: 'First name',
       controlType: 'input',
       required: true,
+      minLength: 3,
       value: 'Chandra',
     },
     middle_name: {
@@ -31,6 +32,7 @@ export const FORM_BUILDER_CONFIG = {
       controlType: 'input',
       inputType: 'email',
       required: true,
+      email: true,
       value: '',
     },
     phone_number: {
@@ -44,6 +46,8 @@ export const FORM_BUILDER_CONFIG = {
   },
   validatorMessages: {
     required: 'Input required',
+    minlength: 'Input must be at least 3 characters long',
+    email: 'Input must be a valid email address',
   },
   controlSize: '',
   layout: {

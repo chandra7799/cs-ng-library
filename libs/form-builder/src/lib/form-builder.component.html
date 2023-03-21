@@ -2,45 +2,29 @@
   <ng-container *ngIf="configuration?.layout as layout">
     <!-- Main container -->
     <div [ngClass]="layout['container'] || 'container-fluid'">
-      <ng-container *ngFor="let row of layout | omit: ['container'] | keysIn">
-        <form [formGroup]="formGroup">
+      <form [formGroup]="formGroup">
+        <ng-container *ngFor="let row of layout | omit: ['container'] | keysIn">
           <!-- Row container -->
           <div class="row">
-            <ng-container
-              *ngFor="let col of layout[row] | omit: ['container'] | keysIn"
-            >
+            <ng-container *ngFor="let col of layout[row] | omit: ['container'] | keysIn">
               <ng-container *ngIf="layout[row][col] | omit: [''] as colValue">
                 <!-- Col container -->
                 <div [ngClass]="[colValue?.width] || 'col'">
                   <div class="form-group">
                     <label>
                       {{ controls[col].label }}
-                      <strong *ngIf="controls[col].required">*</strong>
+                      <strong *ngIf="controls[col].required"> * </strong>
                     </label>
 
                     <input
-                      [ngClass]="[
-                        formGroup.controls[col].invalid &&
-                        formGroup.controls[col].touched
-                          ? 'border border-danger'
-                          : ''
-                      ]"
+                      [ngClass]="formGroup.controls[col].invalid && formGroup.controls[col].touched ? 'border border-danger' : ''"
                       class="form-control"
                       [type]="controls[col]['inputType']"
                       [formControlName]="col"
                     />
-                    <small
-                      class="text-danger"
-                      *ngIf="
-                        formGroup.controls[col]?.invalid &&
-                        formGroup.controls[col]?.touched &&
-                        formGroup.controls[col].errors as errors
-                      "
-                    >
-                      <ng-container
-                        *ngIf="configuration.validatorMessages as errorMessages"
-                      >
-                        {{ errorMessages['required'] }}
+                    <small class="text-danger" *ngIf="formGroup.controls[col]?.invalid && formGroup.controls[col]?.touched">
+                      <ng-container *ngFor="let error of formGroup.controls[col]?.errors | keysIn as errors">
+                        {{ configuration.validatorMessages ? configuration.validatorMessages[error] : '' }}
                       </ng-container>
                     </small>
                   </div>
@@ -48,13 +32,18 @@
               </ng-container>
             </ng-container>
           </div>
-        </form>
-      </ng-container>
+        </ng-container>
+      </form>
     </div>
   </ng-container>
 </ng-container>
 
-<p>isValid : {{ formGroup.status | json }}</p>
-<p>{{ formGroup.value | json }}</p>
+<!-- <div class="container">
+  <p class="row">isValid : {{ formGroup.status | json }}</p>
 
-<p>{{ formGroup.errors | json }}</p>
+  <div class="row" *ngFor="let key of formGroup?.controls | keysIn">
+    {{ key }} :
+
+    {{ formGroup.controls[key].value }}, {{ formGroup.controls[key].errors | json }}
+  </div>
+</div> -->

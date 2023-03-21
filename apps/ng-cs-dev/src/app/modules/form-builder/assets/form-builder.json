@@ -5,6 +5,7 @@
       "title": "First name",
       "placeholder": "First name",
       "controlType": "input",
+
       "value": ""
     },
     "middle_name": {
