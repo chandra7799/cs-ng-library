@@ -9,6 +9,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "allowedCommonJsDependencies": ["lodash"],
         "outputPath": "dist/apps/ng-cs-dev",
         "index": "apps/ng-cs-dev/src/index.html",
         "main": "apps/ng-cs-dev/src/main.ts",
