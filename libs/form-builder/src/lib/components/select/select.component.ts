@@ -1,12 +1,8 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'ng-cs-form-builder-select',
+  selector: 'cs-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
 })
-export class SelectComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class SelectComponent {}

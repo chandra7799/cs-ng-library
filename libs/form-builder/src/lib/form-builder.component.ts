@@ -5,7 +5,7 @@ import { FormBuilderConfig } from './options/form-builder-config.options'
 import { FormBuilderService } from './services/form-builder.service'
 
 @Component({
-  selector: 'ng-cs-form-builder',
+  selector: 'cs-form-builder',
   templateUrl: './form-builder.component.html',
   styleUrls: ['./form-builder.component.scss'],
 })

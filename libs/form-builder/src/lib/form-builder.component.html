@@ -11,7 +11,8 @@
                 <!-- Col container -->
                 <div [ngClass]="[colValue?.width] || 'col'">
                   <div class="form-group">
-                    <label>
+                    <cs-form-builder-template></cs-form-builder-template>
+                    <!-- <label>
                       {{ controls[col].label }}
                       <strong *ngIf="controls[col].required"> * </strong>
                     </label>
@@ -26,7 +27,7 @@
                       <ng-container *ngFor="let error of formGroup.controls[col]?.errors | keysIn as errors">
                         {{ configuration.validatorMessages ? configuration.validatorMessages[error] : '' }}
                       </ng-container>
-                    </small>
+                    </small> -->
                   </div>
                 </div>
               </ng-container>

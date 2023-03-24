@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve",
-    "start-ng-cs-dev":"nx serve ng-cs-dev --port 4540",
+    "start-ng-cs-dev":"nx serve ng-cs-dev --port 4545 --ssl true",
     "build": "nx build",
     "test": "nx test",
     "postinstall": "ngcc --properties es2020 browser module main"

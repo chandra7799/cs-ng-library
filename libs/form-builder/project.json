@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/form-builder/src",
-  "prefix": "ng-cs-form-builder",
+  "prefix": "cs",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:package",

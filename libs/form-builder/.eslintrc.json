@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngCsFormBuilder",
+            "prefix": "cs",
             "style": "camelCase"
           }
         ],
@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "ng-cs-form-builder",
+            "prefix": "cs",
             "style": "kebab-case"
           }
         ]
