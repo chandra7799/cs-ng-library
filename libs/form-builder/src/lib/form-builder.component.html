@@ -11,7 +11,9 @@
                 <!-- Col container -->
                 <div [ngClass]="[colValue?.width] || 'col'">
                   <div class="form-group">
-                    <cs-form-builder-template></cs-form-builder-template>
+                    <cs-form-builder-template [configuration]="configuration" [control]="controls[col]" [key]="col" [formGroup]="formGroup"></cs-form-builder-template>
+
+                    <!-- <p>{{ controls[col] | json }}</p> -->
                     <!-- <label>
                       {{ controls[col].label }}
                       <strong *ngIf="controls[col].required"> * </strong>
@@ -48,3 +50,5 @@
     {{ formGroup.controls[key].value }}, {{ formGroup.controls[key].errors | json }}
   </div>
 </div> -->
+
+<!-- <p>{{configuration | json}}</p> -->

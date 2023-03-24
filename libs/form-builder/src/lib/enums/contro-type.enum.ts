@@ -5,4 +5,5 @@ export enum ControlType {
   DATE = 'date',
   INPUT = 'input',
   SELECT = 'select',
+  TEXT_AREA = 'text-area',
 }

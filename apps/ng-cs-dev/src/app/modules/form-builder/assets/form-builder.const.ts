@@ -7,7 +7,7 @@ export const FORM_BUILDER_CONFIG = {
       controlType: 'input',
       required: true,
       minLength: 3,
-      value: 'Chandra',
+      value: 'c',
     },
     middle_name: {
       label: 'Middle Name',
