@@ -1,4 +1,4 @@
-import { ControlType } from '../enums/contro-type.enum'
+import { ControlType } from '../enums/control-type.enum'
 
 export type Controls = {
   controlType:

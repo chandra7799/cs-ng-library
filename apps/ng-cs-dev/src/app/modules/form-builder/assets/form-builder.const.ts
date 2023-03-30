@@ -35,6 +35,14 @@ export const FORM_BUILDER_CONFIG = {
       email: true,
       value: '',
     },
+    password: {
+      label: 'Password',
+      title: 'Password',
+      placeholder: 'enter password',
+      controlType: 'input',
+      inputType: 'password',
+      required: true,
+    },
     phone_number: {
       label: 'Phone number',
       title: 'Phone number',
@@ -73,6 +81,9 @@ export const FORM_BUILDER_CONFIG = {
     'row-1': {
       container: '',
       email: {
+        width: 'col-sm-4',
+      },
+      password: {
         width: 'col-sm-4',
       },
       phone_number: {
