@@ -1,4 +1,4 @@
-import { ControlType } from './enums/contro-type.enum'
+import { ControlType } from './enums/control-type.enum'
 import { FormGroup } from '@angular/forms'
 import { Component, Input } from '@angular/core'
 import { Controls } from './options/controls.type'

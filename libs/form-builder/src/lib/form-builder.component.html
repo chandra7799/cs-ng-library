@@ -11,7 +11,12 @@
                 <!-- Col container -->
                 <div [ngClass]="[colValue?.width] || 'col'">
                   <div class="form-group">
-                    <cs-form-builder-template [configuration]="configuration" [control]="controls[col]" [key]="col" [formGroup]="formGroup"></cs-form-builder-template>
+                    <cs-form-builder-template
+                      [configuration]="configuration"
+                      [control]="controls[col]"
+                      [key]="col"
+                      [formGroup]="formGroup"
+                    ></cs-form-builder-template>
 
                     <!-- <p>{{ controls[col] | json }}</p> -->
                     <!-- <label>
@@ -52,3 +57,4 @@
 </div> -->
 
 <!-- <p>{{configuration | json}}</p> -->
+<p>{{ formGroup.value | json }}</p>
