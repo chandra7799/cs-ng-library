@@ -1,8 +1,9 @@
-import { FormBuilder, FormGroup } from '@angular/forms'
-import { Component, Input, OnInit } from '@angular/core'
-import { FormBuilderConfig } from './options/form-builder-config.options'
+import { Controls } from './options/controls.type'
+import { FormBuilder } from '@angular/forms'
+import { Component, OnInit } from '@angular/core'
 import { FormBuilderService } from './services/form-builder.service'
 import { FormBuilderBaseComponent } from './form-builder-base.component'
+import { isNil } from 'lodash'
 
 @Component({
   selector: 'cs-form-builder-lib',
@@ -21,15 +22,20 @@ export class FormBuilderComponent
     this.formGroup = this._formBuilder.group({})
   }
 
-  ngOnInit() {
-    this._toFormGroup()
+  ngOnInit(): void {
+    this._toFormGroup(this?.configuration?.controls)
   }
 
-  private _toFormGroup(): void {
-    if (!this.configuration?.controls) return
+  /**
+   * Initialize the form group based on the configuration settings.
+   *
+   * 1. Get the controls from the configuration.
+   * 2. If there are no controls, exit.
+   * 3. Create a form group from the controls.
+   */
 
-    this.formGroup = this._formBuilderService.toFormGroup(
-      this.configuration?.controls
-    )
+  private _toFormGroup(controls: Record<string, Controls>) {
+    if (isNil(controls)) return
+    this.formGroup = this._formBuilderService.toFormGroup(controls)
   }
 }
