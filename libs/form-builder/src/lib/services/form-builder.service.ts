@@ -13,8 +13,14 @@ export class FormBuilderService {
     this._formGroup = this._formBuilder.group({})
   }
 
+  /**
+   * @description
+   * Creates a new FormGroup instance from a controls object
+   * @param controls - the controls object
+   * @returns FormGroup
+   */
   public toFormGroup(controls: Record<string, Controls>): FormGroup<any> {
-    keysIn(controls).map((key) => {
+    keysIn(controls).map((key: string) => {
       const control: Controls = controls[key]
       const [email, max, min, minLength, maxLength, required] = [
         control.email,

@@ -1,1 +1,14 @@
-<p>input works!</p>
+<label [innerHTML]="label"></label>
+<input
+  class="form-control"
+  [value]="value"
+  [type]="control.inputType || 'text'"
+  [placeholder]="placeholder"
+  [formControl]="formControl"
+  (ngModelChange)="ngModelChange()"
+/>
+<small class="text-danger" *ngIf="formControl.invalid && formControl.touched">
+  <ng-container *ngFor="let error of formControl?.errors | keysIn as errors">
+    {{ configuration.validatorMessages ? configuration.validatorMessages[error] : '' }}
+  </ng-container>
+</small>

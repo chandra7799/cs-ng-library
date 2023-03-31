@@ -10,7 +10,7 @@ export * from './lib/components/template/template.component'
 
 export * from './lib/services/form-builder.service'
 
-export * from './lib/enums/contro-type.enum'
+export * from './lib/enums/control-type.enum'
 
 export * from './lib/options/chips.type'
 export * from './lib/options/controls.type'

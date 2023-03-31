@@ -1,6 +1,16 @@
-<p>template works!</p>
-<cs-auto-complete></cs-auto-complete>
-<cs-check-box></cs-check-box>
-<cs-date></cs-date>
-<cs-input></cs-input>
-<cs-select></cs-select>
+<cs-input
+  [configuration]="configuration"
+  [controlSize]="'sm'"
+  [formGroup]="formGroup"
+  [control]="control"
+  [key]="key"
+  [label]="control.label"
+  [max]="control.max"
+  [maxLength]="control.maxLength"
+  [min]="control.min"
+  [minLength]="control.minLength"
+  [placeholder]="control.placeholder"
+  [value]="control.value"
+  (changes)="getChanges($event)"
+>
+</cs-input>
