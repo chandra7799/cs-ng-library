@@ -11,5 +11,6 @@
   [minLength]="control.minLength"
   [placeholder]="control.placeholder"
   [value]="control.value"
+  (changes)="getChanges($event)"
 >
 </cs-input>

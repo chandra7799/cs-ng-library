@@ -16,25 +16,8 @@
                       [control]="controls[col]"
                       [key]="col"
                       [formGroup]="formGroup"
+                      (changes)="getChanges($event)"
                     ></cs-form-builder-template>
-
-                    <!-- <p>{{ controls[col] | json }}</p> -->
-                    <!-- <label>
-                      {{ controls[col].label }}
-                      <strong *ngIf="controls[col].required"> * </strong>
-                    </label>
-
-                    <input
-                      [ngClass]="formGroup.controls[col].invalid && formGroup.controls[col].touched ? 'border border-danger' : ''"
-                      class="form-control"
-                      [type]="controls[col]['inputType']"
-                      [formControlName]="col"
-                    />
-                    <small class="text-danger" *ngIf="formGroup.controls[col]?.invalid && formGroup.controls[col]?.touched">
-                      <ng-container *ngFor="let error of formGroup.controls[col]?.errors | keysIn as errors">
-                        {{ configuration.validatorMessages ? configuration.validatorMessages[error] : '' }}
-                      </ng-container>
-                    </small> -->
                   </div>
                 </div>
               </ng-container>
@@ -46,15 +29,4 @@
   </ng-container>
 </ng-container>
 
-<!-- <div class="container">
-  <p class="row">isValid : {{ formGroup.status | json }}</p>
-
-  <div class="row" *ngFor="let key of formGroup?.controls | keysIn">
-    {{ key }} :
-
-    {{ formGroup.controls[key].value }}, {{ formGroup.controls[key].errors | json }}
-  </div>
-</div> -->
-
-<!-- <p>{{configuration | json}}</p> -->
 <p>{{ formGroup.value | json }}</p>

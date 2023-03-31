@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, EventEmitter, Output } from '@angular/core'
 import { FormControl } from '@angular/forms'
 import { FormBuilderBaseComponent } from '../../form-builder-base.component'
 
@@ -8,7 +8,12 @@ import { FormBuilderBaseComponent } from '../../form-builder-base.component'
   styleUrls: ['./input.component.scss'],
 })
 export class InputComponent extends FormBuilderBaseComponent {
+  @Output() changes: EventEmitter<Record<string, any>> = new EventEmitter()
   get formControl(): FormControl {
     return this.formGroup.get(this.key) as FormControl
+  }
+
+  ngModelChange(): void {
+    this.changes.emit(this.formGroup.value)
   }
 }

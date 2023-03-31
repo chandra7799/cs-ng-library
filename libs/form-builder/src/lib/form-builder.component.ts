@@ -1,6 +1,6 @@
 import { Controls } from './options/controls.type'
 import { FormBuilder } from '@angular/forms'
-import { Component, OnInit } from '@angular/core'
+import { Component, EventEmitter, OnInit, Output } from '@angular/core'
 import { FormBuilderService } from './services/form-builder.service'
 import { FormBuilderBaseComponent } from './form-builder-base.component'
 import { isNil } from 'lodash'
@@ -14,6 +14,9 @@ export class FormBuilderComponent
   extends FormBuilderBaseComponent
   implements OnInit
 {
+  @Output() changes: EventEmitter<Record<string, any>> = new EventEmitter()
+
+  @Output() formValid: EventEmitter<boolean> = new EventEmitter()
   constructor(
     private _formBuilderService: FormBuilderService,
     private _formBuilder: FormBuilder
@@ -37,5 +40,10 @@ export class FormBuilderComponent
   private _toFormGroup(controls: Record<string, Controls>) {
     if (isNil(controls)) return
     this.formGroup = this._formBuilderService.toFormGroup(controls)
+  }
+
+  getChanges($event: Record<string, any>) {
+    this.changes.emit($event)
+    this.formValid.emit(this.formGroup.valid)
   }
 }

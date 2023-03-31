@@ -1,11 +1,11 @@
+import { ControlType } from '@ng-cs/form-builder'
 export const FORM_BUILDER_CONFIG = {
   controls: {
     first_name: {
       label: 'First name',
       title: 'First name',
       placeholder: 'First name',
-      controlType: 'input',
-      required: true,
+      controlType: ControlType.INPUT,
       minLength: 3,
       value: 'c',
     },
@@ -13,14 +13,14 @@ export const FORM_BUILDER_CONFIG = {
       label: 'Middle Name',
       title: 'Middle name',
       placeholder: 'Middle name',
-      controlType: 'input',
+      controlType: ControlType.INPUT,
       value: '',
     },
     last_name: {
       label: 'Last name',
       title: 'Last name',
       placeholder: 'Last name',
-      controlType: 'input',
+      controlType: ControlType.INPUT,
       required: true,
       value: '',
     },
@@ -29,7 +29,7 @@ export const FORM_BUILDER_CONFIG = {
       label: 'Email',
       title: 'Email',
       placeholder: 'Email',
-      controlType: 'input',
+      controlType: ControlType.INPUT,
       inputType: 'email',
       required: true,
       email: true,
@@ -39,7 +39,7 @@ export const FORM_BUILDER_CONFIG = {
       label: 'Password',
       title: 'Password',
       placeholder: 'enter password',
-      controlType: 'input',
+      controlType: ControlType.INPUT,
       inputType: 'password',
       required: true,
     },
@@ -47,7 +47,7 @@ export const FORM_BUILDER_CONFIG = {
       label: 'Phone number',
       title: 'Phone number',
       placeholder: 'Phone number',
-      controlType: 'input',
+      controlType: ControlType.INPUT,
       inputType: 'number',
       value: '',
     },
@@ -57,7 +57,7 @@ export const FORM_BUILDER_CONFIG = {
     minlength: 'Input must be at least 3 characters long',
     email: 'Input must be a valid email address',
   },
-  controlSize: '',
+  controlSize: 'sm',
   layout: {
     container: 'container',
     'row-0': {
@@ -93,4 +93,5 @@ export const FORM_BUILDER_CONFIG = {
       },
     },
   },
+  chips: {},
 }

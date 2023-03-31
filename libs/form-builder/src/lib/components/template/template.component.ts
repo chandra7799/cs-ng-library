@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, EventEmitter, Output } from '@angular/core'
 import { FormBuilderBaseComponent } from '../../form-builder-base.component'
 
 @Component({
@@ -6,4 +6,9 @@ import { FormBuilderBaseComponent } from '../../form-builder-base.component'
   templateUrl: './template.component.html',
   styleUrls: ['./template.component.scss'],
 })
-export class TemplateComponent extends FormBuilderBaseComponent {}
+export class TemplateComponent extends FormBuilderBaseComponent {
+  @Output() changes: EventEmitter<Record<string, any>> = new EventEmitter()
+  getChanges($event: Record<string, any>) {
+    this.changes.emit($event)
+  }
+}

@@ -1,1 +1,7 @@
-<cs-form-builder-lib [configuration]="configuration"> </cs-form-builder-lib>
+<cs-form-builder-lib
+  [configuration]="configuration"
+  (changes)="getChanges($event)"
+  (formValid)="getFormStatus($event)"
+>
+</cs-form-builder-lib>
+<button [disabled]="!isFormValid" class="btn btn-primary" (click)="onFormSubmit()">Submit</button>
