@@ -14,7 +14,7 @@ export class FormBuilderComponent
   extends FormBuilderBaseComponent
   implements OnInit
 {
-  @Output() changes: EventEmitter<Record<string, any>> = new EventEmitter()
+  @Output() changes: EventEmitter<Record<string, unknown>> = new EventEmitter()
 
   @Output() formValid: EventEmitter<boolean> = new EventEmitter()
   constructor(
@@ -37,12 +37,12 @@ export class FormBuilderComponent
    * 3. Create a form group from the controls.
    */
 
-  private _toFormGroup(controls: Record<string, Controls>) {
+  private _toFormGroup(controls: Record<string, Controls>): void {
     if (isNil(controls)) return
     this.formGroup = this._formBuilderService.toFormGroup(controls)
   }
 
-  getChanges($event: Record<string, any>) {
+  getChanges($event: Record<string, unknown>): void {
     this.changes.emit($event)
     this.formValid.emit(this.formGroup.valid)
   }

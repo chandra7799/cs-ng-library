@@ -6,9 +6,28 @@
   [placeholder]="placeholder"
   [formControl]="formControl"
   (ngModelChange)="ngModelChange()"
+  [ngClass]="formControl.invalid && formControl.touched ? 'border border-danger' : ''"
 />
-<small class="text-danger" *ngIf="formControl.invalid && formControl.touched">
-  <ng-container *ngFor="let error of formControl?.errors | keysIn as errors">
-    {{ configuration.validatorMessages ? configuration.validatorMessages[error] : '' }}
-  </ng-container>
-</small>
+
+<ng-container *ngIf="formControl.invalid && formControl.touched">
+  <small class="text-danger">
+    <ng-container *ngFor="let error of formControl.errors | keysIn">
+      <ng-container
+        *ngIf="control.validationMessages && (control.validationMessages | keysIn).includes(error)"
+      >
+        {{ control.validationMessages[error] }}
+      </ng-container>
+
+      <ng-container
+        *ngIf="
+          !(control.validationMessages | keysIn).includes(error) &&
+          (configuration.validatorMessages | keysIn).includes(error)
+        "
+      >
+        <ng-container *ngIf="configuration.validatorMessages as errorMessages">
+          {{ errorMessages[error] }}</ng-container
+        >
+      </ng-container>
+    </ng-container>
+  </small>
+</ng-container>

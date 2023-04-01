@@ -6,8 +6,13 @@ export const FORM_BUILDER_CONFIG: FormBuilderConfig = {
       title: 'First name',
       placeholder: 'First name',
       controlType: ControlType.INPUT,
+      required: true,
       minLength: 3,
       value: 'c',
+      validationMessages: {
+        required: 'First name required',
+        minlength: 'First name must be at least 3 characters',
+      },
     },
     middle_name: {
       label: 'Middle Name',
@@ -34,6 +39,10 @@ export const FORM_BUILDER_CONFIG: FormBuilderConfig = {
       required: true,
       email: true,
       value: '',
+      validationMessages: {
+        required: 'Email required',
+        email: 'Invalid email address',
+      },
     },
     password: {
       label: 'Password',
@@ -42,6 +51,11 @@ export const FORM_BUILDER_CONFIG: FormBuilderConfig = {
       controlType: ControlType.INPUT,
       inputType: 'password',
       required: true,
+      minLength: 6,
+      validationMessages: {
+        required: 'Password required',
+        minlength: 'Password must be at least 6 characters',
+      },
     },
     phone_number: {
       label: 'Phone number',
