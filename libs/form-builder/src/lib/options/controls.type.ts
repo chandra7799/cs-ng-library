@@ -19,4 +19,5 @@ export type Controls = {
   required?: boolean
   title?: string
   value?: string
+  validationMessages?: Record<string, string>
 }

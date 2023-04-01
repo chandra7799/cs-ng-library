@@ -6,6 +6,7 @@ export type FormBuilderConfig = {
   controls: Record<string, Controls>
   validatorMessages?: Record<string, string>
   controlSize?: 'sm' | 'lg'
+  layoutContainerClass?: 'container' | 'container-fluid' | ''
   layout: Record<string, Layout>
   chips: Record<string, Chips>
 }

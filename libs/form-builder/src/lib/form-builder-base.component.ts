@@ -22,7 +22,6 @@ export abstract class FormBuilderBaseComponent {
 
   @Input() controlSize: 'sm' | 'lg' = 'sm'
 
-
   @Input()
   formGroup: FormGroup<any> = {} as FormGroup<any>
 
@@ -56,4 +55,6 @@ export abstract class FormBuilderBaseComponent {
   @Input() stack: 'row' | 'column' = 'column'
 
   @Input() value?: string | number
+
+  @Input() validationMessages?: Record<string, string>
 }

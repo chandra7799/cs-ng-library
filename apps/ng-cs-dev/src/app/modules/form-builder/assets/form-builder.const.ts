@@ -1,5 +1,5 @@
-import { ControlType } from '@ng-cs/form-builder'
-export const FORM_BUILDER_CONFIG = {
+import { ControlType, FormBuilderConfig } from '@ng-cs/form-builder'
+export const FORM_BUILDER_CONFIG: FormBuilderConfig = {
   controls: {
     first_name: {
       label: 'First name',
@@ -58,8 +58,8 @@ export const FORM_BUILDER_CONFIG = {
     email: 'Input must be a valid email address',
   },
   controlSize: 'sm',
+  layoutContainerClass: 'container',
   layout: {
-    container: 'container',
     'row-0': {
       container: '',
       first_name: {

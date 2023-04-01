@@ -1,12 +1,12 @@
 <ng-container *ngIf="!!configuration && configuration?.controls as controls">
   <ng-container *ngIf="configuration?.layout as layout">
     <!-- Main container -->
-    <div [ngClass]="layout['container'] || 'container-fluid'">
+    <div [ngClass]="configuration.layoutContainerClass || 'container-fluid'">
       <form [formGroup]="formGroup">
-        <ng-container *ngFor="let row of layout | omit: ['container'] | keysIn">
+        <ng-container *ngFor="let row of layout | keysIn">
           <!-- Row container -->
           <div class="row">
-            <ng-container *ngFor="let col of layout[row] | omit: ['container'] | keysIn">
+            <ng-container *ngFor="let col of layout[row] | keysIn">
               <ng-container *ngIf="layout[row][col] | omit: [''] as colValue">
                 <!-- Col container -->
                 <div [ngClass]="[colValue?.width] || 'col'">
